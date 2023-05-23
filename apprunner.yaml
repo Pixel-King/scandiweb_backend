@@ -1,9 +1,0 @@
-version: 1.0
-runtime: php 
-build:
-  commands:
-    build:
-      - pip install pipenv
-      - pipenv install 
-run: 
-  command: php index.php
