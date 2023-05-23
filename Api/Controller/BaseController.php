@@ -18,7 +18,6 @@ abstract class BaseController{
     protected function sendOutput( $message, $data = null )
     {
         header_remove('Set-Cookie');
-        header('Content-Type: application/json');
         $response = null;
 
         if (isset($data)) 

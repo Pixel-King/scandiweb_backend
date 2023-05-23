@@ -15,6 +15,11 @@ class Router
 
     public function handleRequest()
     {
+        header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: POST, GET, DELETE');
+        header('Access-Control-Allow-Headers: *');
+
         $requestMethod = $_SERVER['REQUEST_METHOD'];
         $requestUrl = $_SERVER['PATH_INFO'];
         $routeKey = $requestMethod . ':' . $requestUrl;
