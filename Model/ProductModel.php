@@ -30,11 +30,13 @@ class ProductModel{
         $sku = $productObject->getSKU();
         $name = $productObject->getName();
         $price = $productObject->getPrice();
+        $type = $productObject->getType();
         $attribute = $productObject->getSpecificAttribute();
-        $query = "INSERT INTO products (sku, name, price, $field ) VALUE ( :sku , :name , :price , :attribute )";
+        $query = "INSERT INTO products (sku, name, price, $field ) VALUE ( :sku , :name , :price , :type, :attribute )";
         return $this->db->select($query, [
             ':sku' => $sku,
             ':name' => $name,
+            ':type' => $type,
             ':price' => $price,
             ':attribute' => $attribute
         ]);
@@ -60,6 +62,8 @@ class ProductModel{
             $prodObj->setPrice($attributes['price']);  
             $prodObj->setSpecificAttribute($attributes[$prodObj->getDbSpecificFieldName()]);
             return $prodObj;
+        }   else {
+            http_response_code(404);
         }
     }
 }

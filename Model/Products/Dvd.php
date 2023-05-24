@@ -3,6 +3,7 @@
 class Dvd extends Product
 {
     protected $size;
+    protected $type = 'dvd';
     protected $dbSpecificFieldName = 'size';
 
     public function getInf()

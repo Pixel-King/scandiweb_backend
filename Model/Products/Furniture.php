@@ -3,6 +3,7 @@
 class Furniture extends Product
 {
     protected $dimensions;
+    protected $type = 'furniture';
     protected $dbSpecificFieldName = 'dimensions';
 
     public function getInf()

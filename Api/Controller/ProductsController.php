@@ -23,9 +23,11 @@ class ProductsController extends BaseController
             }
             $this->sendOutput('Success!', $result);
         } catch (Exception $e) {
-            $this->sendOutput($e->getMessage());
+            http_response_code(404);
+            $this->sendOutput('Something went wrong.');
         }
     }
+
     public function save()
     {
         try {
@@ -41,9 +43,10 @@ class ProductsController extends BaseController
                 $this->sendOutput('The required query parameter/s were not found!');
             }
         } catch (Exception $e) {
-            $this->sendOutput($e->getMessage());
+            $this->sendOutput('Something went wrong.');
         }
     }
+
     public function delete()
     {
         try {
@@ -57,7 +60,7 @@ class ProductsController extends BaseController
                 $this->sendOutput('The required query parameter/s were not found!');
             } 
         } catch (Exception $e) {
-            $this->sendOutput($e->getMessage());
+            $this->sendOutput('Something went wrong.');
         }
     }
 }

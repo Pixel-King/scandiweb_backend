@@ -5,6 +5,7 @@ abstract class Product
     protected $sku;
     protected $name;
     protected $price;
+    protected $type;
     protected $dbSpecificFieldName;
 
     public function getDbSpecificFieldName(): string
@@ -40,6 +41,10 @@ abstract class Product
     public function setPrice(float $price): void
     {
         $this->price = $price;
+    }
+
+    public function getType() {
+        return $this->type;
     }
 
     abstract public function getSpecificAttribute();

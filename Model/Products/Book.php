@@ -3,6 +3,7 @@
 class Book extends Product
 {
     protected $weight;
+    protected $type = 'book';
     protected $dbSpecificFieldName = 'weight';
 
     public function getInf() {
